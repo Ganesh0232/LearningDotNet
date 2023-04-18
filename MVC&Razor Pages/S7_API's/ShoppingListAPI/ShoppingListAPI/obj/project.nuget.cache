@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vUoBYejxdodRv3mBQfm8Fp+UnPtzJV+kzh70MW5D7bCDdlxzn5nuNDZBD+29XxjU4gaiQj2rLxmrc/VcXv2akg==",
+  "dgSpecHash": "ELS76YIt3bJgnsJHlMWspp1/EZnLdk/VGFtOqG0aXs/jZVZ4DBOWr5PAr8vHmI9/DXfruaC/0SIv09egdVQv3A==",
   "success": true,
-  "projectFilePath": "C:\\Ganesh232\\Udemy_.NEt\\VisualStudio\\.Net\\MVC&Razor Pages\\S7_API's\\ShoppingListAPI\\ShoppingListAPI\\ShoppingListAPI.csproj",
+  "projectFilePath": "C:\\Ganesh232\\git\\Surya\\MVC&Razor Pages\\S7_API's\\ShoppingListAPI\\ShoppingListAPI\\ShoppingListAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SAILS-DM292\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\SAILS-DM292\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

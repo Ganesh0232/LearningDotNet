@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Ganesh232\\Udemy_.NEt\\VisualStudio\\.Net\\MVC&Razor Pages\\S7_API's\\MinimalShoppingListAPI\\MinimalShoppingListAPI\\MinimalShoppingListAPI.csproj": {}
+    "C:\\Ganesh232\\git\\Surya\\MVC&Razor Pages\\S7_API's\\MinimalShoppingListAPI\\MinimalShoppingListAPI\\MinimalShoppingListAPI.csproj": {}
   },
   "projects": {
-    "C:\\Ganesh232\\Udemy_.NEt\\VisualStudio\\.Net\\MVC&Razor Pages\\S7_API's\\MinimalShoppingListAPI\\MinimalShoppingListAPI\\MinimalShoppingListAPI.csproj": {
+    "C:\\Ganesh232\\git\\Surya\\MVC&Razor Pages\\S7_API's\\MinimalShoppingListAPI\\MinimalShoppingListAPI\\MinimalShoppingListAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Ganesh232\\Udemy_.NEt\\VisualStudio\\.Net\\MVC&Razor Pages\\S7_API's\\MinimalShoppingListAPI\\MinimalShoppingListAPI\\MinimalShoppingListAPI.csproj",
+        "projectUniqueName": "C:\\Ganesh232\\git\\Surya\\MVC&Razor Pages\\S7_API's\\MinimalShoppingListAPI\\MinimalShoppingListAPI\\MinimalShoppingListAPI.csproj",
         "projectName": "MinimalShoppingListAPI",
-        "projectPath": "C:\\Ganesh232\\Udemy_.NEt\\VisualStudio\\.Net\\MVC&Razor Pages\\S7_API's\\MinimalShoppingListAPI\\MinimalShoppingListAPI\\MinimalShoppingListAPI.csproj",
+        "projectPath": "C:\\Ganesh232\\git\\Surya\\MVC&Razor Pages\\S7_API's\\MinimalShoppingListAPI\\MinimalShoppingListAPI\\MinimalShoppingListAPI.csproj",
         "packagesPath": "C:\\Users\\SAILS-DM292\\.nuget\\packages\\",
-        "outputPath": "C:\\Ganesh232\\Udemy_.NEt\\VisualStudio\\.Net\\MVC&Razor Pages\\S7_API's\\MinimalShoppingListAPI\\MinimalShoppingListAPI\\obj\\",
+        "outputPath": "C:\\Ganesh232\\git\\Surya\\MVC&Razor Pages\\S7_API's\\MinimalShoppingListAPI\\MinimalShoppingListAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
