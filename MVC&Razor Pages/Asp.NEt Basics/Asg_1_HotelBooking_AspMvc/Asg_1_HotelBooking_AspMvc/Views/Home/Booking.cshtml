@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model HotelBooking
+<h3>😁</h3>
+<div class="row">
+    <div class="col-6">
+
+        <div class="card">
+            <div class="card-header">
+                <h4>Booking</h4>
+            </div>
+            <div class="card-body">
+
+                <div>
+                    <form asp-controller="Home" asp-action="Bookings">
+                        <div class="mb-3">
+                            <label  class="col-form-label ">Guest Name</label>
+                            <input asp-for=GuestName type="text" class="form-control"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label ">Start Date</label>
+                            <input asp-for=DateStart type="datetime-local" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label ">End Date</label>
+                            <input asp-for=DateEnd type="datetime-local" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-primary">Save</button>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="card-footer">
+
+            </div>
+        </div>
+    </div>
+
+</divclass>

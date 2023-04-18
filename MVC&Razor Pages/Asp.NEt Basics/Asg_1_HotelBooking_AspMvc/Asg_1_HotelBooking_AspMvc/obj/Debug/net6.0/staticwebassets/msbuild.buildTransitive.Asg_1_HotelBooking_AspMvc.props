@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Asg_1_HotelBooking_AspMvc.props" />
+</Project>

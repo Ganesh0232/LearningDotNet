@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model LoginViewModel
+
+<h3>👽</h3>
+<hr/>
+
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header">
+                <h2>Create</h2>
+            </div>
+            <div class="card-body">
+                <form asp-controller="Practice" asp-action="CreateAgent" method="post">
+                    <div class="mb-3">
+                        <label class="form-label ">Name       </label>
+                        <input asp-for=Name type="text" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label ">Code Name</label>
+                        <input asp-for=CodeName  type="text" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+
+                <div class="card-footer ">
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

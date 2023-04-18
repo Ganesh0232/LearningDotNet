@@ -1,0 +1,10 @@
+﻿
+
+@model List<Asg_1_HotelBooking_AspMvc.Models.HotelBooking>
+
+<ul>
+    @foreach (var user in Model)
+    {
+        <li><h2>@user.GuestName has booked from @user.DateStart to @user.DateEnd </h2></li>
+    }
+</ul>
