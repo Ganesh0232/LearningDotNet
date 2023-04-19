@@ -466,11 +466,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Ganesh232\\git\\Surya\\.Net-Core-API---EF-Core--JWT\\.Net Core API & EF Core, JWT\\DMWalks\\DMWalksAPI\\DMWalksAPI.csproj",
+      "projectUniqueName": "C:\\Ganesh232\\git\\Surya\\.Net Core API & EF Core, JWT\\DMWalks\\DMWalksAPI\\DMWalksAPI.csproj",
       "projectName": "DMWalksAPI",
-      "projectPath": "C:\\Ganesh232\\git\\Surya\\.Net-Core-API---EF-Core--JWT\\.Net Core API & EF Core, JWT\\DMWalks\\DMWalksAPI\\DMWalksAPI.csproj",
+      "projectPath": "C:\\Ganesh232\\git\\Surya\\.Net Core API & EF Core, JWT\\DMWalks\\DMWalksAPI\\DMWalksAPI.csproj",
       "packagesPath": "C:\\Users\\SAILS-DM292\\.nuget\\packages\\",
-      "outputPath": "C:\\Ganesh232\\git\\Surya\\.Net-Core-API---EF-Core--JWT\\.Net Core API & EF Core, JWT\\DMWalks\\DMWalksAPI\\obj\\",
+      "outputPath": "C:\\Ganesh232\\git\\Surya\\.Net Core API & EF Core, JWT\\DMWalks\\DMWalksAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
