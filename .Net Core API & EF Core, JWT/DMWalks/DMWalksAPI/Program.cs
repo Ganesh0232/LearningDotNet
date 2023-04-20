@@ -1,4 +1,5 @@
 using DMWalksAPI.Data;
+using DMWalksAPI.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<DMWalksDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DMWalksConnectionString")));
+
+builder.Services.AddScoped<IRegionRepo , SqlRegionRepo>();
+//builder.Services.AddScoped<IRegionRepo, InMemoryRegionRepo>();
 
 var app = builder.Build();
 

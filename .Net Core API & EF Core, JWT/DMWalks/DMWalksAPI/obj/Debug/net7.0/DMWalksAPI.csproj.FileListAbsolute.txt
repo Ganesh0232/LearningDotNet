@@ -74,3 +74,4 @@ C:\Ganesh232\git\Surya\.Net Core API & EF Core, JWT\DMWalks\DMWalksAPI\obj\Debug
 C:\Ganesh232\git\Surya\.Net Core API & EF Core, JWT\DMWalks\DMWalksAPI\obj\Debug\net7.0\DMWalksAPI.pdb
 C:\Ganesh232\git\Surya\.Net Core API & EF Core, JWT\DMWalks\DMWalksAPI\obj\Debug\net7.0\DMWalksAPI.genruntimeconfig.cache
 C:\Ganesh232\git\Surya\.Net Core API & EF Core, JWT\DMWalks\DMWalksAPI\obj\Debug\net7.0\ref\DMWalksAPI.dll
+C:\Ganesh232\git\Surya\.Net Core API & EF Core, JWT\DMWalks\DMWalksAPI\bin\Debug\net7.0\AutoMapper.dll
