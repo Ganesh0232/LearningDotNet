@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "ISelsyCNMeFumAhdzRnDxm0Q9kAFaS/D9/XVE6a/kY55/sEKHh/09hcPzWYeIvdAMD/X4LBIIiMfv37ZnklfHg==",
+  "success": true,
+  "projectFilePath": "C:\\Ganesh232\\Udemy_.NEt\\VisualStudio\\.Net\\MVC&Razor Pages\\S8_Security and identity\\MyRestaurantDM\\MyRestaurantDM\\MyRestaurantDM.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SAILS-DM292\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
+    "C:\\Users\\SAILS-DM292\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\SAILS-DM292\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\SAILS-DM292\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\SAILS-DM292\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\SAILS-DM292\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\SAILS-DM292\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
