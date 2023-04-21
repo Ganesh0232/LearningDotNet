@@ -1,9 +1,14 @@
-﻿namespace MyRestaurantDM.Models
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+
+namespace MyRestaurantDM.Models
 {
-    public class Orders
+    public class OrdersModel
     {
+        [Key]
         public int OrderId { get; set; }
 
+        [Required , Unicode]
         public int CustomerId { get; set; }
         public string? CustomerName { get; set; }
 
