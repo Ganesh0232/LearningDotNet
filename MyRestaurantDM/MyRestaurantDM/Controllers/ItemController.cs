@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyRestaurantDM.Data;
-using MyRestaurantDM.Models;
+using MyRestaurantDM.Models.Domain;
 using MyRestaurantDM.Repositories;
 
 namespace MyRestaurantDM.Controllers

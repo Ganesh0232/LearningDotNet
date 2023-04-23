@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyRestaurantDM.Data;
 
@@ -11,9 +12,11 @@ using MyRestaurantDM.Data;
 namespace MyRestaurantDM.Migrations
 {
     [DbContext(typeof(MyRestaurantDbContext))]
-    partial class MyRestaurantDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230423085058_addedPKToCustomerIdinaddOrderDto")]
+    partial class addedPKToCustomerIdinaddOrderDto
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,7 +80,7 @@ namespace MyRestaurantDM.Migrations
 
                     b.HasKey("OrderId");
 
-                    b.ToTable("OrdersDM");
+                    b.ToTable("Regions");
                 });
 #pragma warning restore 612, 618
         }

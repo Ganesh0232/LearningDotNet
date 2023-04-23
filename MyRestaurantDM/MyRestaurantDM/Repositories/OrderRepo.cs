@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using MyRestaurantDM.Data;
-using MyRestaurantDM.Models;
+using MyRestaurantDM.Models.Domain;
 
 namespace MyRestaurantDM.Repositories
 {

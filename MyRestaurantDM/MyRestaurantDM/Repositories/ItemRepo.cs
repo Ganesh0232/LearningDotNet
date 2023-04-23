@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyRestaurantDM.Data;
-using MyRestaurantDM.Models;
+using MyRestaurantDM.Models.Domain;
 using System.Data.Common;
 
 namespace MyRestaurantDM.Repositories

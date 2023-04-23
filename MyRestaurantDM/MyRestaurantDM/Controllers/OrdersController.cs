@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MyRestaurantDM.Data;
-using MyRestaurantDM.Models;
+using MyRestaurantDM.Models.Domain;
+using MyRestaurantDM.Models.DTO;
 using MyRestaurantDM.Repositories;
 
 namespace MyRestaurantDM.Controllers
@@ -23,7 +25,7 @@ namespace MyRestaurantDM.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-           var orders = await repo.GetOrders();
+            var orders = await repo.GetOrders();
             return Ok(orders);
         }
 
@@ -36,25 +38,132 @@ namespace MyRestaurantDM.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(OrdersModel orders)
+        public async Task<IActionResult> Create([FromBody] AddOrderDto dto)
         {
-            return Ok(await repo.CreateOrder(orders));
+            //Get data from Domain Model
+
+            //  var orderDomain= (await repo.CreateOrder(orders));
+
+            //Map Domain Models to Dto
+            var orderDomainModel = new OrdersModel
+            {
+                CustomerId = dto.CustomerId,
+                CustomerName = dto.CustomerName,
+                CustomerEmail = dto.CustomerEmail,
+                CustomerPhone = dto.CustomerPhone,
+                address = dto.address,
+                Bill = dto.Bill,
+                CustomerCity = dto.CustomerCity
+
+
+
+            };
+
+            //Use DomainModel to Create Order
+
+            db.OrdersDM.Add(orderDomainModel);
+            db.SaveChanges();
+
+            //Map domain model back to Dto
+            var Orderdto = new OrderDto
+            {
+                CustomerId = orderDomainModel.CustomerId,
+                CustomerName = orderDomainModel.CustomerName,
+                CustomerEmail = orderDomainModel.CustomerEmail,
+                CustomerPhone = orderDomainModel.CustomerPhone,
+                address = orderDomainModel.address,
+                Bill = orderDomainModel.Bill
+
+
+            };
+            // return Ok(orderDomainModel);
+            return CreatedAtAction(nameof(Create), new { OrderId = Orderdto.OrderId }, Orderdto);
+
         }
 
-        [HttpPut ("{id}")]
-        public async Task<IActionResult> UpdateOrder(int id , OrdersModel orders)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateOrder([FromRoute] int id, [FromBody] UpdateOrderDto orders)
         {
-             await repo.UpdateOrder(id, orders);  
-            db.SaveChanges();   
-            return Ok("Successfully updated😅");
+            //Check If Order Exists or Not 
+            var DomainModel = await db.OrdersDM.FirstOrDefaultAsync(x => x.OrderId == id);
+            if (DomainModel == null)
+            {
+                return NotFound(id);
+            }
+
+            //Map Dto to DomainModel
+            DomainModel.CustomerName = orders.CustomerName;
+            DomainModel.address = orders.address;
+            DomainModel.CustomerEmail = orders.CustomerEmail;
+            DomainModel.CustomerPhone = orders.CustomerPhone;
+
+            //Convert Domain to Dto
+            var Orderdto = new OrderDto
+            {
+                CustomerPhone = orders.CustomerPhone,
+                CustomerName = orders.CustomerName,
+                CustomerEmail = orders.CustomerEmail,
+                address = orders.address,
+            };
+
+
+            db.SaveChangesAsync();
+            return Ok(Orderdto);
+
+            // await repo.UpdateOrder(id, orders);  
+            //db.SaveChanges();   
+            //return Ok("Successfully updated😅");
+            /*
+            
+             var existingRegion = await dbContext.Regions.FirstOrDefaultAsync(x => x.Id ==id);
+
+            if (existingRegion == null)
+            {
+                return null;
+            }
+
+            existingRegion.Code = region.Code;
+            existingRegion.Name = region.Name;
+            existingRegion.RegionImageUrl = region.RegionImageUrl;
+
+            await dbContext.SaveChangesAsync();
+            return existingRegion;
+
+             */
+
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult>DeleteOrder(int id)
+        public async Task<IActionResult> DeleteOrder([FromRoute] int id)
         {
-            await repo.DeleteOrder(id);
-            db.SaveChanges();
-            return Ok("Deleted");
+            var domainOrder = await db.OrdersDM.FirstOrDefaultAsync(x => x.OrderId == id);
+            if (domainOrder == null) 
+            { 
+                return NotFound(id);
+            }
+
+            //Delete Order
+            db.OrdersDM.Remove(domainOrder);
+           // db.SaveChanges();
+
+            //To return deleted order in Output
+
+            //Map Domain model to DTO
+
+            var orderdto = new OrderDto
+            {
+                OrderId = domainOrder.OrderId,
+                CustomerName = domainOrder.CustomerName,
+                CustomerEmail = domainOrder.CustomerEmail,
+                CustomerCity = domainOrder.CustomerCity,
+                CustomerId = domainOrder.CustomerId,
+                CustomerPhone = domainOrder.CustomerPhone,
+
+            };
+
+            db.SaveChangesAsync();
+
+            return Ok(orderdto);
         }
 
     }

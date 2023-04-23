@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http.Metadata;
 using Microsoft.AspNetCore.Mvc;
-using MyRestaurantDM.Models;
+using MyRestaurantDM.Models.Domain;
 
 namespace MyRestaurantDM.Repositories
 {
