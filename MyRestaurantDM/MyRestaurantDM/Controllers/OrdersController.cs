@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyRestaurantDM.Data;
@@ -14,18 +15,27 @@ namespace MyRestaurantDM.Controllers
     {
         private readonly MyRestaurantDbContext db;
         private readonly IOrderRepo repo;
+        private readonly IMapper mapper;
 
-        public OrdersController(MyRestaurantDbContext db, IOrderRepo repo)
+        public OrdersController(MyRestaurantDbContext db, IOrderRepo repo , IMapper mapper)
         {
             this.db = db;
             this.repo = repo;
+            this.mapper = mapper;
 
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var orders = await repo.GetOrders();
+            //Get data from Database
+            var ordersDomain = await repo.GetOrders();
+
+            //Map Domain to DTO
+          var orders =  mapper.Map<List<OrderDto>>(ordersDomain);
+
+            //Return DTO's
+
             return Ok(orders);
         }
 
@@ -45,6 +55,7 @@ namespace MyRestaurantDM.Controllers
             //  var orderDomain= (await repo.CreateOrder(orders));
 
             //Map Domain Models to Dto
+            /*
             var orderDomainModel = new OrdersModel
             {
                 CustomerId = dto.CustomerId,
@@ -54,29 +65,39 @@ namespace MyRestaurantDM.Controllers
                 address = dto.address,
                 Bill = dto.Bill,
                 CustomerCity = dto.CustomerCity
-
-
-
             };
+            */
+
+
 
             //Use DomainModel to Create Order
 
-            db.OrdersDM.Add(orderDomainModel);
-            db.SaveChanges();
+            //db.OrdersDM.Add(orderDomainModel);
+            //db.SaveChanges();
 
             //Map domain model back to Dto
-            var Orderdto = new OrderDto
-            {
-                CustomerId = orderDomainModel.CustomerId,
-                CustomerName = orderDomainModel.CustomerName,
-                CustomerEmail = orderDomainModel.CustomerEmail,
-                CustomerPhone = orderDomainModel.CustomerPhone,
-                address = orderDomainModel.address,
-                Bill = orderDomainModel.Bill
+            //var Orderdto = new OrderDto
+            //{
+            //    CustomerId = orderDomainModel.CustomerId,
+            //    CustomerName = orderDomainModel.CustomerName,
+            //    CustomerEmail = orderDomainModel.CustomerEmail,
+            //    CustomerPhone = orderDomainModel.CustomerPhone,
+            //    address = orderDomainModel.address,
+            //    Bill = orderDomainModel.Bill
 
 
-            };
+            //};
             // return Ok(orderDomainModel);
+            //Map Dto to Domain
+
+            var Domain = mapper.Map<OrdersModel>(dto);
+
+            //Use Domain to Create Order
+            Domain = await repo.CreateOrder(Domain);
+
+            //Domain to dto
+            var Orderdto = mapper.Map<OrderDto>(Domain);   
+
             return CreatedAtAction(nameof(Create), new { OrderId = Orderdto.OrderId }, Orderdto);
 
         }
@@ -90,6 +111,23 @@ namespace MyRestaurantDM.Controllers
             {
                 return NotFound(id);
             }
+            /*
+            //Mappping Dto to DomainModel using AutoMapper
+
+          //  var Domain = mapper.Map<OrdersModel>(orders);
+
+
+            DomainModel = await repo.UpdateOrder(id, DomainModel);
+            if(DomainModel != null)
+            {
+                return NotFound();
+            }
+
+            //Convert Domain to dto
+            var Orderdto = mapper.Map<OrderDto>(DomainModel);
+
+            return Ok(Orderdto);
+            */
 
             //Map Dto to DomainModel
             DomainModel.CustomerName = orders.CustomerName;

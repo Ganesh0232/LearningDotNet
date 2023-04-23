@@ -107,3 +107,5 @@ C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\obj\Debug\net7.0\refint\MyR
 C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\obj\Debug\net7.0\MyRestaurantDM.pdb
 C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\obj\Debug\net7.0\MyRestaurantDM.genruntimeconfig.cache
 C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\obj\Debug\net7.0\ref\MyRestaurantDM.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\AutoMapper.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
