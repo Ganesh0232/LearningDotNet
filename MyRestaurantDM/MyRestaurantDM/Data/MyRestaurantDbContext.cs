@@ -8,11 +8,11 @@ namespace MyRestaurantDM.Data
     {
 
 
-        public MyRestaurantDbContext(DbContextOptions dbContextOptions) : base(dbContextOptions)
+        public MyRestaurantDbContext(DbContextOptions<MyRestaurantDbContext> dbContextOptions) : base(dbContextOptions)
         {
 
         }
-
+        
         public DbSet<ItemModel> ItemsDM { get; set; }
         public DbSet<OrdersModel> OrdersDM { get; set; }
       //  public DbSet<OrderDto> Ordereddto { get; set; }
