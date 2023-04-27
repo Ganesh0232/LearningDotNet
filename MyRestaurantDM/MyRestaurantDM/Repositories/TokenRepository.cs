@@ -35,7 +35,7 @@ namespace MyRestaurantDM.Repositories
                 configuration["Jwt:Issuer"],
                 configuration["Jwt:Audience"],
                 claims,
-                expires: DateTime.Now.AddSeconds(9000000000),
+                expires: DateTime.Now.AddSeconds(9000),
                 signingCredentials: credentials
                                             );
 
