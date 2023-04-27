@@ -32,7 +32,7 @@ namespace MyRestaurantDM.Data
                  {
                     Id = WriterRoleId,
                     ConcurrencyStamp =WriterRoleId,
-                    Name ="Write",
+                    Name ="Writer",
                     NormalizedName = "Writer".ToUpper()
 
                  }

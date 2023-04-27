@@ -12,7 +12,7 @@ namespace MyRestaurantDM.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class OrdersController : ControllerBase
     {
         private readonly MyRestaurantDbContext db;
@@ -28,6 +28,8 @@ namespace MyRestaurantDM.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles ="Reader")]
+
         public async Task<IActionResult> Get()
         {
             //Get data from Database
@@ -42,6 +44,7 @@ namespace MyRestaurantDM.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "Reader")]
         public async Task<IActionResult> GetById(int id)
         {
             var orders = await repo.GetOrderById(id);
@@ -50,6 +53,7 @@ namespace MyRestaurantDM.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Writer")]
         public async Task<IActionResult> Create([FromBody] AddOrderDto dto)
         {
             //Get data from Domain Model
@@ -105,6 +109,7 @@ namespace MyRestaurantDM.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "Writer")]
         public async Task<IActionResult> UpdateOrder([FromRoute] int id, [FromBody] UpdateOrderDto orders)
         {
             //Check If Order Exists or Not 
@@ -174,6 +179,7 @@ namespace MyRestaurantDM.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Writer")]
         public async Task<IActionResult> DeleteOrder([FromRoute] int id)
         {
             var domainOrder = await db.OrdersDM.FirstOrDefaultAsync(x => x.OrderId == id);

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MyRestaurantDM.Models.DTO;
+using MyRestaurantDM.Repositories;
 
 namespace MyRestaurantDM.Controllers
 {
@@ -10,10 +11,12 @@ namespace MyRestaurantDM.Controllers
     public class AuthController : ControllerBase
     {
         private readonly UserManager<IdentityUser> userManager;
+        private readonly ITokenRepository repo;
 
-        public AuthController(UserManager<IdentityUser> userManager)
+        public AuthController(UserManager<IdentityUser> userManager , ITokenRepository repo)
         {
             this.userManager = userManager;
+            this.repo = repo;
         }
         [HttpPost("Register")]
 
@@ -74,7 +77,24 @@ namespace MyRestaurantDM.Controllers
                 //}
             }
 
-            return Ok("Login Successful, Atluntadhi Manathoni");
+            //Get Roles for this user
+            var roles = await userManager.GetRolesAsync(user);
+
+            //Create Token
+            if (roles == null)
+            {
+                return BadRequest("Role not found for the user , Please check and then update");
+            }
+
+            var JwtToken = repo.CreateJWTToken(user,roles.ToList());
+
+            var response = new LoginResponseDto
+            {
+                JwtToken = JwtToken,
+            };
+
+           // return Ok("Bearer "+response);
+          return Ok(response);
 
         }
 
