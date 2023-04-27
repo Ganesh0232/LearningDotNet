@@ -17,6 +17,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IItemRepo, ItemRepo>();
 builder.Services.AddScoped<IOrderRepo ,  OrderRepo>();
+builder.Services.AddScoped<ITokenRepository, TokenRepository>();
 
 //To make use of AutoMapper , Following code need to be used
 builder.Services.AddAutoMapper(typeof(AutoMapperProfies));
