@@ -49,55 +49,88 @@ namespace MyRestaurantDM.Controllers
             return BadRequest("Something went wrong");
         }
 
-        [HttpPost("Login")]
+        //[HttpPost("Login")]
 
-        public async Task<IActionResult> Login([FromBody] LoginRequestDto login)
+        //public async Task<IActionResult> Login([FromBody] LoginRequestDto login)
+        //{
+        //    var user = await userManager.FindByEmailAsync(login.UserName);
+        //    if (user == null)
+        //    {
+        //        return BadRequest("You doesn't belong here Or you might have entered wrong password");
+
+        //    }
+
+        //    var checkpassword = await userManager.CheckPasswordAsync(user, login.Password);
+        //    if (user != null)
+        //    {
+
+        //        if (!checkpassword)
+        //        {
+        //            return BadRequest("Check your password , Its not the one you entered while registering");
+        //        }
+
+
+        //        //if (checkpassword)
+        //        //{
+        //        //    //Will Create token here
+        //        //    return Ok();
+        //        //}
+        //    }
+
+        //    //Get Roles for this user
+        //    var roles = await userManager.GetRolesAsync(user);
+
+        //    //Create Token
+        //    if (roles == null)
+        //    {
+        //        return BadRequest("Role not found for the user , Please check and then update");
+        //    }
+
+        //    var jwtToken = repo.CreateJWTToken(user,roles.ToList());
+
+        //    var response = new LoginResponseDto
+        //    {
+        //        JwtToken = jwtToken,
+        //    };
+
+        //    // return Ok("Bearer "+response);
+        //    // return Ok("Bearer "+jwtToken);
+        //    return Ok(response);
+
+        //}
+
+        [HttpPost]
+        [Route("Login")]
+        public async Task<IActionResult> Login([FromBody] LoginRequestDto loginRequestDto)
         {
-            var user = await userManager.FindByEmailAsync(login.UserName);
-            if (user == null)
-            {
-                return BadRequest("You doesn't belong here Or you might have entered wrong password");
+            var user = await userManager.FindByEmailAsync(loginRequestDto.UserName);
 
-            }
-
-            var checkpassword = await userManager.CheckPasswordAsync(user, login.Password);
             if (user != null)
             {
+                var checkPasswordResult = await userManager.CheckPasswordAsync(user, loginRequestDto.Password);
 
-                if (!checkpassword)
+                if (checkPasswordResult)
                 {
-                    return BadRequest("Check your password , Its not the one you entered while registering");
+                    // Get Roles for this user
+                    var roles = await userManager.GetRolesAsync(user);
+
+                    if (roles != null)
+                    {
+                        // Create Token
+
+                        var jwtToken = repo.CreateJWTToken(user, roles.ToList());
+
+                        var response = new LoginResponseDto
+                        {
+                            JwtToken = jwtToken
+                        };
+
+                        return Ok(response);
+                    }
                 }
-
-
-                //if (checkpassword)
-                //{
-                //    //Will Create token here
-                //    return Ok();
-                //}
             }
 
-            //Get Roles for this user
-            var roles = await userManager.GetRolesAsync(user);
-
-            //Create Token
-            if (roles == null)
-            {
-                return BadRequest("Role not found for the user , Please check and then update");
-            }
-
-            var JwtToken = repo.CreateJWTToken(user,roles.ToList());
-
-            var response = new LoginResponseDto
-            {
-                JwtToken = JwtToken,
-            };
-
-           // return Ok("Bearer "+response);
-          return Ok(response);
-
+            return BadRequest("Username or password incorrect");
         }
-
-
     }
 }

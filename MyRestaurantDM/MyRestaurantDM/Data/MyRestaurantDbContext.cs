@@ -15,7 +15,10 @@ namespace MyRestaurantDM.Data
         
         public DbSet<ItemModel> ItemsDM { get; set; }
         public DbSet<OrdersModel> OrdersDM { get; set; }
+
       //  public DbSet<OrderDto> Ordereddto { get; set; }
+
+        public DbSet<Image> Images { get; set; }
 
 
 

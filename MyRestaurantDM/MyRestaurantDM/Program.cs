@@ -8,18 +8,20 @@ using MyRestaurantDM.Repositories;
 using System.Text;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddHttpContextAccessor();  
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo { Title = "My Restaurent", Version = "G232" });
+    options.SwaggerDoc("v1", new OpenApiInfo { Title = "My Restaurent", Version = "v1" });
     options.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme
     {
         Name="Authorization",
@@ -52,6 +54,7 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddScoped<IItemRepo, ItemRepo>();
 builder.Services.AddScoped<IOrderRepo ,  OrderRepo>();
 builder.Services.AddScoped<ITokenRepository, TokenRepository>();
+builder.Services.AddScoped<IimageRepo , ImageRepository>(); 
 
 //To make use of AutoMapper , Following code need to be used
 builder.Services.AddAutoMapper(typeof(AutoMapperProfies));
@@ -67,7 +70,7 @@ builder.Services.AddScoped<IItemRepo,ItemRepo>();
 //62.SettingUp Identity
 builder.Services.AddIdentityCore<IdentityUser>()
     .AddRoles<IdentityRole>()
-    .AddTokenProvider<DataProtectorTokenProvider<IdentityUser>>("MyRestaurant")
+    .AddTokenProvider<DataProtectorTokenProvider<IdentityUser>>("MyRestaurantDM")
     .AddEntityFrameworkStores<AuthDMDbContext>()
     .AddDefaultTokenProviders();
 //Setting Password
@@ -84,16 +87,21 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
-    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
     {
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
-        ValidIssuer = builder.Configuration["Jwt : Issuer"],
-        ValidAudience = builder.Configuration["Jwt: Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
-
+        //options.RequireHttpsMetadata = false;
+        //options.SaveToken = true;
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt : Issuer"],
+            ValidAudience = builder.Configuration["Jwt: Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8
+                                    .GetBytes(builder.Configuration["Jwt:Key"])),
+            ClockSkew = TimeSpan.Zero
+        };
     });
 
 var app = builder.Build();
@@ -106,8 +114,17 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthentication();    
+
+app.UseAuthentication(); 
+
 app.UseAuthorization();
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider= new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(),"Images")),
+    RequestPath= "/Images"
+
+});
 
 app.MapControllers();
 
