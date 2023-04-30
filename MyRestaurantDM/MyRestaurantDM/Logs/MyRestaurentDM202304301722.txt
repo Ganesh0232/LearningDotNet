@@ -1,0 +1,14 @@
+2023-04-30 17:22:14.050 +05:30 [INF] User profile is available. Using 'C:\Users\SAILS-DM292\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-30 17:22:14.275 +05:30 [INF] Now listening on: https://localhost:7233
+2023-04-30 17:22:14.278 +05:30 [INF] Now listening on: http://localhost:5191
+2023-04-30 17:22:14.281 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-30 17:22:14.284 +05:30 [INF] Hosting environment: Development
+2023-04-30 17:22:14.286 +05:30 [INF] Content root path: C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM
+2023-04-30 17:22:32.736 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/index.html - -
+2023-04-30 17:22:33.034 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/index.html - - - 200 - text/html;charset=utf-8 301.3092ms
+2023-04-30 17:22:33.132 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7233/_framework/aspnetcore-browser-refresh.js - -
+2023-04-30 17:22:33.151 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7233/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 18.7505ms
+2023-04-30 17:22:33.166 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7233/_vs/browserLink - -
+2023-04-30 17:22:33.204 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7233/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 37.5292ms
+2023-04-30 17:22:33.433 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - -
+2023-04-30 17:22:33.610 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 176.1826ms

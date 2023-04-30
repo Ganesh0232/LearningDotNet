@@ -9,13 +9,28 @@ using System.Text;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.FileProviders;
+using Serilog;
+using MyRestaurantDM.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Logging using Serilog
+
+var logger = new LoggerConfiguration()
+                    .WriteTo.Console()
+                   .WriteTo.File("Logs/MyRestaurentDM.txt", rollingInterval: RollingInterval.Minute)
+                  .WriteTo.Email("ganeshkumar.marrapu@gmail.com", "ganeshkumar.marrapu+269@gmail.com")
+                    .MinimumLevel.Information()
+                    .CreateLogger();
+
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
+
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddHttpContextAccessor();  
+builder.Services.AddHttpContextAccessor();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
@@ -24,10 +39,10 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new OpenApiInfo { Title = "My Restaurent", Version = "v1" });
     options.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme
     {
-        Name="Authorization",
-        In=ParameterLocation.Header,
-        Type=SecuritySchemeType.ApiKey,
-        Scheme= JwtBearerDefaults.AuthenticationScheme
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = JwtBearerDefaults.AuthenticationScheme
     });
 
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -52,9 +67,9 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 builder.Services.AddScoped<IItemRepo, ItemRepo>();
-builder.Services.AddScoped<IOrderRepo ,  OrderRepo>();
+builder.Services.AddScoped<IOrderRepo, OrderRepo>();
 builder.Services.AddScoped<ITokenRepository, TokenRepository>();
-builder.Services.AddScoped<IimageRepo , ImageRepository>(); 
+builder.Services.AddScoped<IimageRepo, ImageRepository>();
 
 //To make use of AutoMapper , Following code need to be used
 builder.Services.AddAutoMapper(typeof(AutoMapperProfies));
@@ -65,7 +80,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectio
 builder.Services.AddDbContext<AuthDMDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("AuthDbConnection")));
 
-builder.Services.AddScoped<IItemRepo,ItemRepo>();
+builder.Services.AddScoped<IItemRepo, ItemRepo>();
 
 //62.SettingUp Identity
 builder.Services.AddIdentityCore<IdentityUser>()
@@ -113,16 +128,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
+app.UseMiddleware<ExceptionHandlerMiddleware>();
+
 app.UseHttpsRedirection();
 
-app.UseAuthentication(); 
+app.UseAuthentication();
 
 app.UseAuthorization();
 
 app.UseStaticFiles(new StaticFileOptions
 {
-    FileProvider= new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(),"Images")),
-    RequestPath= "/Images"
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Images")),
+    RequestPath = "/Images"
 
 });
 

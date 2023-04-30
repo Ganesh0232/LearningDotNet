@@ -116,3 +116,17 @@ C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Microsoft.
 C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
 C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Serilog.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Serilog.AspNetCore.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Serilog.Extensions.Hosting.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Serilog.Extensions.Logging.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Serilog.Formatting.Compact.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Serilog.Settings.Configuration.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Serilog.Sinks.Console.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Serilog.Sinks.Debug.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Serilog.Sinks.File.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\MailKit.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\MimeKit.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\BouncyCastle.Crypto.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Serilog.Sinks.Email.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Serilog.Sinks.PeriodicBatching.dll

@@ -2,6 +2,7 @@
 using MyRestaurantDM.Data;
 using MyRestaurantDM.Models.Domain;
 using MyRestaurantDM.Repositories;
+using System.Net;
 
 namespace MyRestaurantDM.Controllers
 {
@@ -21,17 +22,30 @@ namespace MyRestaurantDM.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var items = await repo.GetItems();
-            return Ok(items);
+            try
+            {
+                throw new Exception("Hello , This is an intentional exception to check global" +
+                    "Exception handling");
+
+                var items = await repo.GetItems();
+                return Ok(items);
+            }
+            catch (Exception ex)
+            {
+
+                return Problem("Something went wrong ", null, (int)HttpStatusCode.InternalServerError);
+
+            }
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-          
-                var items = await repo.GetItemsByID(id);
-                return Ok(items);
-            
-         
+
+
+            var items = await repo.GetItemsByID(id);
+            return Ok(items);
+
+
 
         }
         [HttpPost]
@@ -43,7 +57,7 @@ namespace MyRestaurantDM.Controllers
             dm.SaveChanges();
 
             return Ok(items);
- 
+
 
         }
 
@@ -59,9 +73,9 @@ namespace MyRestaurantDM.Controllers
             return Ok(items);
         }
 
-        [HttpPut ("{id}")]
+        [HttpPut("{id}")]
 
-        public async Task<IActionResult> Update (int id, ItemModel item)
+        public async Task<IActionResult> Update(int id, ItemModel item)
         {
             await repo.UpdateItem(id, item);
             dm.SaveChanges();

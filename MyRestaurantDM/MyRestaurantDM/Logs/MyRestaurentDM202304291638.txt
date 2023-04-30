@@ -1,0 +1,7 @@
+2023-04-29 16:38:59.046 +05:30 [INF] User profile is available. Using 'C:\Users\SAILS-DM292\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-29 16:38:59.306 +05:30 [INF] Now listening on: https://localhost:7233
+2023-04-29 16:38:59.309 +05:30 [INF] Now listening on: http://localhost:5191
+2023-04-29 16:38:59.312 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-29 16:38:59.314 +05:30 [INF] Hosting environment: Development
+2023-04-29 16:38:59.315 +05:30 [INF] Content root path: C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM
+2023-04-29 16:38:59.912 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/index.html - -

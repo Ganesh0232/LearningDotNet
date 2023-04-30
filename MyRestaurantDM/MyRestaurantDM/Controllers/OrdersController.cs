@@ -7,6 +7,7 @@ using MyRestaurantDM.Data;
 using MyRestaurantDM.Models.Domain;
 using MyRestaurantDM.Models.DTO;
 using MyRestaurantDM.Repositories;
+using System.Text.Json;
 
 namespace MyRestaurantDM.Controllers
 {
@@ -18,33 +19,48 @@ namespace MyRestaurantDM.Controllers
         private readonly MyRestaurantDbContext db;
         private readonly IOrderRepo repo;
         private readonly IMapper mapper;
+        private  ILogger<OrdersController> loger { get; }
 
-        public OrdersController(MyRestaurantDbContext db, IOrderRepo repo , IMapper mapper)
+        public OrdersController(MyRestaurantDbContext db, IOrderRepo repo , IMapper mapper , ILogger<OrdersController> loger)
         {
             this.db = db;
             this.repo = repo;
             this.mapper = mapper;
-
+            this.loger = loger;
         }
 
         [HttpGet]
-       [Authorize (Roles ="Reader")]
+      // [Authorize (Roles ="Reader")]
 
         public async Task<IActionResult> Get()
         {
+            try
+            {
+                throw new Exception("Its me");
+           loger.LogInformation("Get all Methods Invoked");
             //Get data from Database
             var ordersDomain = await repo.GetOrders();
 
             //Map Domain to DTO
           var orders =  mapper.Map<List<OrderDto>>(ordersDomain);
 
+          loger.LogInformation($"Get orders invoked : {JsonSerializer.Serialize(orders)}");
+            
+
             //Return DTO's
 
             return Ok(orders);
+
+            }
+
+            catch (Exception ex)
+            {
+                return BadRequest( ex.Message);
+            }
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "Reader")]
+        //[Authorize(Roles = "Reader")]
         public async Task<IActionResult> GetById(int id)
         {
             var orders = await repo.GetOrderById(id);
@@ -53,7 +69,7 @@ namespace MyRestaurantDM.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Writer")]
+       // [Authorize(Roles = "Writer")]
         public async Task<IActionResult> Create([FromBody] AddOrderDto dto)
         {
             //Get data from Domain Model
@@ -109,7 +125,7 @@ namespace MyRestaurantDM.Controllers
         }
 
         [HttpPut("{id}")]
-        [Authorize(Roles = "Writer")]
+    //    [Authorize(Roles = "Writer")]
         public async Task<IActionResult> UpdateOrder([FromRoute] int id, [FromBody] UpdateOrderDto orders)
         {
             //Check If Order Exists or Not 
@@ -179,7 +195,7 @@ namespace MyRestaurantDM.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Writer")]
+    //    [Authorize(Roles = "Writer")]
         public async Task<IActionResult> DeleteOrder([FromRoute] int id)
         {
             var domainOrder = await db.OrdersDM.FirstOrDefaultAsync(x => x.OrderId == id);
