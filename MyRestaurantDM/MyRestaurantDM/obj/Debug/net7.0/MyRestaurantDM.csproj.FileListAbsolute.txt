@@ -130,3 +130,5 @@ C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\MimeKit.dl
 C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\BouncyCastle.Crypto.dll
 C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Serilog.Sinks.Email.dll
 C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Serilog.Sinks.PeriodicBatching.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll

@@ -1,0 +1,33 @@
+2023-05-01 11:47:43.902 +05:30 [INF] User profile is available. Using 'C:\Users\SAILS-DM292\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-01 11:47:43.983 +05:30 [INF] Creating key {8ad265b7-5416-4f6e-adcb-d9c541e9c654} with creation date 2023-05-01 06:17:43Z, activation date 2023-05-03 05:48:15Z, and expiration date 2023-07-30 06:17:43Z.
+2023-05-01 11:47:44.001 +05:30 [INF] Writing data to file 'C:\Users\SAILS-DM292\AppData\Local\ASP.NET\DataProtection-Keys\key-8ad265b7-5416-4f6e-adcb-d9c541e9c654.xml'.
+2023-05-01 11:47:44.128 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-01 11:47:44.129 +05:30 [INF] Hosting environment: Development
+2023-05-01 11:47:44.129 +05:30 [INF] Content root path: C:\Ganesh232\git\Surya\MyRestaurantDM\MyRestaurantDM
+2023-05-01 11:47:44.191 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44314/swagger/index.html - -
+2023-05-01 11:47:44.243 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'apiVersion' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-01 11:47:44.542 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44314/swagger/index.html - - - 500 - text/html;+charset=utf-8 353.4794ms
+2023-05-01 11:47:44.611 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44314/_framework/aspnetcore-browser-refresh.js - -
+2023-05-01 11:47:44.619 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44314/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 6.9317ms
+2023-05-01 11:47:45.109 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44314/_vs/browserLink - -
+2023-05-01 11:47:45.154 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44314/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 44.8719ms

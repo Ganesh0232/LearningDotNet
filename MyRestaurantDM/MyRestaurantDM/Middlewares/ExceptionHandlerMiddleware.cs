@@ -13,7 +13,7 @@ namespace MyRestaurantDM.Middlewares
             this.next = next;
         }
 
-        public async Task InvokeExceptionHandlerAsync(HttpContext context)
+        public async Task InvokeAsync(HttpContext context)
         {
             try
             {
