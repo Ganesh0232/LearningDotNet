@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LuVKkSFFwk/c4QXgId575s0jvWYl2dSVrwpt9ahvIPhz5umzKVs6ufTVdzphz6SR1gslr/UdobJrUFnTRT6Scg==",
+  "dgSpecHash": "bSoxvBcx65g+PzEIhKGVaINpGPTQcRc+JYgnEFu+CGe3r0c+rqPb5rgeNuqggvFXb4fn90cnn56d7qCcxxU+Sw==",
   "success": true,
-  "projectFilePath": "C:\\Ganesh232\\git\\Surya\\DesignPatterns\\DesignPatterns\\Singleton\\Singleton.csproj",
+  "projectFilePath": "C:\\Ganesh232\\git\\Surya\\LearningDotNet\\DesignPatterns\\DesignPatterns\\Singleton\\Singleton.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

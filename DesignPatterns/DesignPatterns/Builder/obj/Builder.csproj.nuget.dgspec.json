@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Ganesh232\\git\\Surya\\DesignPatterns\\DesignPatterns\\Builder\\Builder.csproj": {}
+    "C:\\Ganesh232\\git\\Surya\\LearningDotNet\\DesignPatterns\\DesignPatterns\\Builder\\Builder.csproj": {}
   },
   "projects": {
-    "C:\\Ganesh232\\git\\Surya\\DesignPatterns\\DesignPatterns\\Builder\\Builder.csproj": {
+    "C:\\Ganesh232\\git\\Surya\\LearningDotNet\\DesignPatterns\\DesignPatterns\\Builder\\Builder.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Ganesh232\\git\\Surya\\DesignPatterns\\DesignPatterns\\Builder\\Builder.csproj",
+        "projectUniqueName": "C:\\Ganesh232\\git\\Surya\\LearningDotNet\\DesignPatterns\\DesignPatterns\\Builder\\Builder.csproj",
         "projectName": "Builder",
-        "projectPath": "C:\\Ganesh232\\git\\Surya\\DesignPatterns\\DesignPatterns\\Builder\\Builder.csproj",
+        "projectPath": "C:\\Ganesh232\\git\\Surya\\LearningDotNet\\DesignPatterns\\DesignPatterns\\Builder\\Builder.csproj",
         "packagesPath": "C:\\Users\\SAILS-DM292\\.nuget\\packages\\",
-        "outputPath": "C:\\Ganesh232\\git\\Surya\\DesignPatterns\\DesignPatterns\\Builder\\obj\\",
+        "outputPath": "C:\\Ganesh232\\git\\Surya\\LearningDotNet\\DesignPatterns\\DesignPatterns\\Builder\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

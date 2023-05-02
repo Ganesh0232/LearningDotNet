@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Singleton
-build_property.ProjectDir = C:\Ganesh232\git\Surya\DesignPatterns\DesignPatterns\Singleton\
+build_property.ProjectDir = C:\Ganesh232\git\Surya\LearningDotNet\DesignPatterns\DesignPatterns\Singleton\

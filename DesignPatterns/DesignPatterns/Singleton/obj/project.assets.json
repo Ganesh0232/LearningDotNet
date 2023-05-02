@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Ganesh232\\git\\Surya\\DesignPatterns\\DesignPatterns\\Singleton\\Singleton.csproj",
+      "projectUniqueName": "C:\\Ganesh232\\git\\Surya\\LearningDotNet\\DesignPatterns\\DesignPatterns\\Singleton\\Singleton.csproj",
       "projectName": "Singleton",
-      "projectPath": "C:\\Ganesh232\\git\\Surya\\DesignPatterns\\DesignPatterns\\Singleton\\Singleton.csproj",
+      "projectPath": "C:\\Ganesh232\\git\\Surya\\LearningDotNet\\DesignPatterns\\DesignPatterns\\Singleton\\Singleton.csproj",
       "packagesPath": "C:\\Users\\SAILS-DM292\\.nuget\\packages\\",
-      "outputPath": "C:\\Ganesh232\\git\\Surya\\DesignPatterns\\DesignPatterns\\Singleton\\obj\\",
+      "outputPath": "C:\\Ganesh232\\git\\Surya\\LearningDotNet\\DesignPatterns\\DesignPatterns\\Singleton\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
