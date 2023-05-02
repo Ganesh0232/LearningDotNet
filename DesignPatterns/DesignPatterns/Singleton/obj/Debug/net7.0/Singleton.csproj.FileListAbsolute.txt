@@ -1,0 +1,15 @@
+C:\Ganesh232\git\Surya\DesignPatterns\DesignPatterns\Singleton\bin\Debug\net7.0\Singleton.exe
+C:\Ganesh232\git\Surya\DesignPatterns\DesignPatterns\Singleton\bin\Debug\net7.0\Singleton.deps.json
+C:\Ganesh232\git\Surya\DesignPatterns\DesignPatterns\Singleton\bin\Debug\net7.0\Singleton.runtimeconfig.json
+C:\Ganesh232\git\Surya\DesignPatterns\DesignPatterns\Singleton\bin\Debug\net7.0\Singleton.dll
+C:\Ganesh232\git\Surya\DesignPatterns\DesignPatterns\Singleton\bin\Debug\net7.0\Singleton.pdb
+C:\Ganesh232\git\Surya\DesignPatterns\DesignPatterns\Singleton\obj\Debug\net7.0\Singleton.csproj.AssemblyReference.cache
+C:\Ganesh232\git\Surya\DesignPatterns\DesignPatterns\Singleton\obj\Debug\net7.0\Singleton.GeneratedMSBuildEditorConfig.editorconfig
+C:\Ganesh232\git\Surya\DesignPatterns\DesignPatterns\Singleton\obj\Debug\net7.0\Singleton.AssemblyInfoInputs.cache
+C:\Ganesh232\git\Surya\DesignPatterns\DesignPatterns\Singleton\obj\Debug\net7.0\Singleton.AssemblyInfo.cs
+C:\Ganesh232\git\Surya\DesignPatterns\DesignPatterns\Singleton\obj\Debug\net7.0\Singleton.csproj.CoreCompileInputs.cache
+C:\Ganesh232\git\Surya\DesignPatterns\DesignPatterns\Singleton\obj\Debug\net7.0\Singleton.dll
+C:\Ganesh232\git\Surya\DesignPatterns\DesignPatterns\Singleton\obj\Debug\net7.0\refint\Singleton.dll
+C:\Ganesh232\git\Surya\DesignPatterns\DesignPatterns\Singleton\obj\Debug\net7.0\Singleton.pdb
+C:\Ganesh232\git\Surya\DesignPatterns\DesignPatterns\Singleton\obj\Debug\net7.0\Singleton.genruntimeconfig.cache
+C:\Ganesh232\git\Surya\DesignPatterns\DesignPatterns\Singleton\obj\Debug\net7.0\ref\Singleton.dll
