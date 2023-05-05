@@ -30,7 +30,7 @@ namespace MultiThreading
         static void Main(string[] args)
         {
             Stopwatch sw = new Stopwatch();
-            sw.Start();
+           
             //Console.WriteLine("Hello, World!");
             //Process.Start("notepad.exe");
             //Process.Start("c:\\tmp\\HelloWorld.txt");
@@ -40,18 +40,23 @@ namespace MultiThreading
             Program t2 = new Program();
             Thread task2 = new Thread(t2.Task2);
             Thread t1 = new Thread(Task1); // To intiate thread
+            sw.Start();
+
             t1.Start(); // To start a thread
             //Thread.Sleep(1000);// To put Thread insleep
             task2.Start();
-            //task2.Join();
-            //task2.Priority = ThreadPriority.Highest; // To set priority
-            //t1.Join();
+
+            sw.Stop();
+
+            task2.Join();
+           // task2.Priority = ThreadPriority.Highest; // To set priority
+            t1.Join();
 
 
             //  t1.Join();// To make the Main thread  end after ending the end of t1 thread
             // t1.Abort(); //To abort or end threa t1 which is Task1
             Console.WriteLine("Main Thread exited");
-         sw.Stop();
+         //sw.Stop();
             Console.WriteLine(sw.Elapsed);
             Console.ReadLine();
         }
