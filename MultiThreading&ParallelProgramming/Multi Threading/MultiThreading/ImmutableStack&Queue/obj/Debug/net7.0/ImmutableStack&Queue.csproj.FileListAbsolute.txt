@@ -1,0 +1,15 @@
+C:\Ganesh232\git\Surya\MultiThreading&ParallelProgramming\Multi Threading\MultiThreading\ImmutableStack&Queue\bin\Debug\net7.0\ImmutableStack&Queue.exe
+C:\Ganesh232\git\Surya\MultiThreading&ParallelProgramming\Multi Threading\MultiThreading\ImmutableStack&Queue\bin\Debug\net7.0\ImmutableStack&Queue.deps.json
+C:\Ganesh232\git\Surya\MultiThreading&ParallelProgramming\Multi Threading\MultiThreading\ImmutableStack&Queue\bin\Debug\net7.0\ImmutableStack&Queue.runtimeconfig.json
+C:\Ganesh232\git\Surya\MultiThreading&ParallelProgramming\Multi Threading\MultiThreading\ImmutableStack&Queue\bin\Debug\net7.0\ImmutableStack&Queue.dll
+C:\Ganesh232\git\Surya\MultiThreading&ParallelProgramming\Multi Threading\MultiThreading\ImmutableStack&Queue\bin\Debug\net7.0\ImmutableStack&Queue.pdb
+C:\Ganesh232\git\Surya\MultiThreading&ParallelProgramming\Multi Threading\MultiThreading\ImmutableStack&Queue\obj\Debug\net7.0\ImmutableStack&Queue.csproj.AssemblyReference.cache
+C:\Ganesh232\git\Surya\MultiThreading&ParallelProgramming\Multi Threading\MultiThreading\ImmutableStack&Queue\obj\Debug\net7.0\ImmutableStack&Queue.GeneratedMSBuildEditorConfig.editorconfig
+C:\Ganesh232\git\Surya\MultiThreading&ParallelProgramming\Multi Threading\MultiThreading\ImmutableStack&Queue\obj\Debug\net7.0\ImmutableStack&Queue.AssemblyInfoInputs.cache
+C:\Ganesh232\git\Surya\MultiThreading&ParallelProgramming\Multi Threading\MultiThreading\ImmutableStack&Queue\obj\Debug\net7.0\ImmutableStack&Queue.AssemblyInfo.cs
+C:\Ganesh232\git\Surya\MultiThreading&ParallelProgramming\Multi Threading\MultiThreading\ImmutableStack&Queue\obj\Debug\net7.0\ImmutableStack&Queue.csproj.CoreCompileInputs.cache
+C:\Ganesh232\git\Surya\MultiThreading&ParallelProgramming\Multi Threading\MultiThreading\ImmutableStack&Queue\obj\Debug\net7.0\ImmutableStack&Queue.dll
+C:\Ganesh232\git\Surya\MultiThreading&ParallelProgramming\Multi Threading\MultiThreading\ImmutableStack&Queue\obj\Debug\net7.0\refint\ImmutableStack&Queue.dll
+C:\Ganesh232\git\Surya\MultiThreading&ParallelProgramming\Multi Threading\MultiThreading\ImmutableStack&Queue\obj\Debug\net7.0\ImmutableStack&Queue.pdb
+C:\Ganesh232\git\Surya\MultiThreading&ParallelProgramming\Multi Threading\MultiThreading\ImmutableStack&Queue\obj\Debug\net7.0\ImmutableStack&Queue.genruntimeconfig.cache
+C:\Ganesh232\git\Surya\MultiThreading&ParallelProgramming\Multi Threading\MultiThreading\ImmutableStack&Queue\obj\Debug\net7.0\ref\ImmutableStack&Queue.dll
