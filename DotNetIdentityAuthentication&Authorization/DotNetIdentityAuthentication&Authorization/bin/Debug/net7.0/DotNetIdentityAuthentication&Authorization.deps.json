@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "DotNetIdentityAuthentication&Authorization/1.0.0": {
+        "runtime": {
+          "DotNetIdentityAuthentication&Authorization.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DotNetIdentityAuthentication&Authorization/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

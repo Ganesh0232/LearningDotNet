@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using UserStories.Data;
 
 namespace Revathi
 {
@@ -6,6 +9,8 @@ namespace Revathi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddDbContext<UserStoriesContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("UserStoriesContext") ?? throw new InvalidOperationException("Connection string 'UserStoriesContext' not found.")));
 
             // Add services to the container.
 
