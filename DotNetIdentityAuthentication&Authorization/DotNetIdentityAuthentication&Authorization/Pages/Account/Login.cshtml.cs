@@ -27,14 +27,21 @@ namespace DotNetIdentityAuthentication_Authorization.Pages.Account
                     new Claim (ClaimTypes.Email,"admin@gmail.com"),
                     new Claim ("Department","HR"),
                     new Claim ("Admin" , "true"),
-                    new Claim ("Manager", "true")
+                    new Claim ("Manager", "true"),
+                    new Claim("EmploymentDate" , "2023-01-01")
 
                 };
 
                 var identity = new ClaimsIdentity(claims , "MyCookieAuth");
                 ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
 
-               await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal);
+                var authProperties = new AuthenticationProperties
+                {
+                    IsPersistent = Credential.RememberMe
+
+                };
+
+               await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal,authProperties);
                 return RedirectToPage("/Index");
             }
 
@@ -51,5 +58,8 @@ namespace DotNetIdentityAuthentication_Authorization.Pages.Account
         [Required]
         [Display(Name ="Password")]
         public string Password { get; set;}
+
+        [Display(Name ="Remember Me")]
+        public bool RememberMe { get; set;}  
     }
 }

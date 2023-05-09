@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using UserStories.Data;
 using UserStories.Models;
@@ -15,6 +17,7 @@ namespace UserStories.Controllers
     public class UserStoriesController : ControllerBase
     {
         private readonly UserStoriesContext _context;
+        private readonly IDbConnection _connectionString;
 
         public UserStoriesController(UserStoriesContext context)
         {
@@ -52,7 +55,7 @@ namespace UserStories.Controllers
 
         // PUT: api/UserStories/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        [HttpPut("Update")]
         public async Task<IActionResult> PutRegisterModel(int id, RegisterModel registerModel)
         {
             if (id != registerModel.Id)
@@ -81,8 +84,34 @@ namespace UserStories.Controllers
             return NoContent();
         }
 
+
+        //[HttpPut("UpdateUsingDapper")]
+        //public async Task<IActionResult> Update(int id, [FromBody] RegisterModel model)
+        //{
+        //    if (model == null || id != model.Id)
+        //    {
+        //        return BadRequest();
+        //    }
+
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    using (var connection = new SqlConnection(_connectionString))
+        //    {
+        //        var query = "UPDATE MyTable SET Name = @Name, Age = @Age WHERE Id = @Id";
+        //        var parameters = new { Name = model.FirstName,PhoneNumber = model.phoneNumber, Id = id };
+        //        await connection.ExecuteAsync(query, parameters);
+        //    }
+
+        //    return NoContent();
+        //}
+
         // POST: api/UserStories
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+
+
         [HttpPost]
         public async Task<ActionResult<RegisterModel>> PostRegisterModel(RegisterModel registerModel)
         {

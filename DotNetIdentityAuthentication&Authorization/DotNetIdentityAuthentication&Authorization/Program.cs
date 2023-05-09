@@ -1,3 +1,6 @@
+using DotNetIdentityAuthentication_Authorization.Authorization;
+using Microsoft.AspNetCore.Authorization;
+
 namespace DotNetIdentityAuthentication_Authorization
 {
     public class Program
@@ -11,6 +14,7 @@ namespace DotNetIdentityAuthentication_Authorization
                 options.Cookie.Name = "MyCookieAuth";
                 options.LoginPath = "/Account/Login";
                 options.AccessDeniedPath = "/Account/AccessDenied";
+                options.ExpireTimeSpan = TimeSpan.FromSeconds(232);
             });
 
             builder.Services.AddAuthorization(options =>
@@ -24,10 +28,12 @@ namespace DotNetIdentityAuthentication_Authorization
                 options.AddPolicy("HRManagerOnly",
                     policy => policy
                     .RequireClaim("Deapartment", "HR")
-                    .RequireClaim("HR"));
+                    .RequireClaim("HR")
+                    .Requirements.Add(new HRManagerProbationRequirement(3)));
             });
-             
+
             // Add services to the container.
+            builder.Services.AddSingleton<IAuthorizationHandler, HRManagerProbationRequirementHandler>();
             builder.Services.AddRazorPages();
 
             var app = builder.Build();
